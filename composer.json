@@ -32,7 +32,7 @@
     },
     "suggest": {
         "sonata-project/cache-bundle": "dev-master",
-        "sonata-project/admin-bundle": "dev-master"
+        "rmzamora/admin-bundle": "dev-rmzamora-master"
     },
     "autoload": {
         "psr-0": { "Sonata\\BlockBundle": "" }
