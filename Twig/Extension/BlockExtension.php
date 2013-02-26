@@ -35,10 +35,10 @@ class BlockExtension extends \Twig_Extension
 
     /**
      * @param BlockServiceManagerInterface $blockServiceManager
-     * @param CacheManagerInterface $cacheManager
-     * @param array $cacheBlocks
-     * @param BlockLoaderInterface $blockLoader
-     * @param BlockRendererInterface $blockRenderer
+     * @param CacheManagerInterface        $cacheManager
+     * @param array                        $cacheBlocks
+     * @param BlockLoaderInterface         $blockLoader
+     * @param BlockRendererInterface       $blockRenderer
      */
     public function __construct(BlockServiceManagerInterface $blockServiceManager, array $cacheBlocks, BlockLoaderInterface $blockLoader, BlockRendererInterface $blockRenderer, CacheManagerInterface $cacheManager = null)
     {
@@ -137,7 +137,7 @@ class BlockExtension extends \Twig_Extension
      * @throws \RuntimeException
      *
      * @param $block
-     * @param bool $useCache
+     * @param bool  $useCache
      * @param array $extraCacheKeys
      *
      * @return string
@@ -182,7 +182,7 @@ class BlockExtension extends \Twig_Extension
         $response = $this->blockRenderer->render($block);
         $contextualKeys = $recorder ? $recorder->pop() : array();
         if ($response->isCacheable() && $cacheKeys && $cacheService) {
-            $cacheService->set($cacheKeys, $response, $block->getTtl(), $contextualKeys);
+            $cacheService->set($cacheKeys, $response, $response->getTtl(), $contextualKeys);
         }
 
         return $response->getContent();
@@ -208,4 +208,3 @@ class BlockExtension extends \Twig_Extension
         return $this->cacheManager->getCacheService($type);
     }
 }
-
