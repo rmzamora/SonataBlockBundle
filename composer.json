@@ -10,7 +10,7 @@
             "name": "Mell M. Zamora",
             "email": "me@mellzamora.com",
             "homepage": "http://mellzamora.com"
-        },    
+        },
         {
             "name": "Thomas Rabaix",
             "email": "thomas.rabaix@sonata-project.org",
@@ -27,7 +27,7 @@
     },
     "require-dev": {
         "sonata-project/cache-bundle": "2.1.*",
-        "sonata-project/admin-bundle": "2.2.*@dev"
+        "rmzamora/admin-bundle": "2.2.*@dev"
     },
     "suggest": {
         "sonata-project/cache-bundle": "2.1.*",
