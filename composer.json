@@ -1,11 +1,16 @@
 {
-    "name": "sonata-project/block-bundle",
+    "name": "rmzamora/block-bundle",
     "type": "symfony-bundle",
-    "description": "Symfony SonataBlockBundle",
-    "keywords": ["sonata", "block"],
+    "description": "Symfony SonataBlockBundle rmzamora forked",
+    "keywords": ["sonata", "block", "rmzamora forked"],
     "homepage": "http://sonata-project.org/bundles/block",
     "license": "MIT",
     "authors": [
+        {
+            "name": "Mell M. Zamora",
+            "email": "me@mellzamora.com",
+            "homepage": "http://mellzamora.com"
+        },    
         {
             "name": "Thomas Rabaix",
             "email": "thomas.rabaix@sonata-project.org",
