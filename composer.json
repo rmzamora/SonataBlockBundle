@@ -28,11 +28,10 @@
     },
     "require-dev": {
         "sonata-project/cache-bundle": "2.1.*",
-        "rmzamora/admin-bundle": "2.2.*@dev"
+        "rmzamora/admin-bundle": "2.3.*@dev"
     },
     "suggest": {
-        "sonata-project/cache-bundle": "2.1.*",
-        "sonata-project/admin-bundle": "2.2.*@dev"
+        "sonata-project/cache-bundle": "2.1.*"
     },
     "autoload": {
         "psr-0": { "Sonata\\BlockBundle": "" }
