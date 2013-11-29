@@ -25,7 +25,7 @@
         "symfony/http-foundation": "~2.2",
         "symfony/form": "~2.2",
         "doctrine/common": "~2.3",
-        "knplabs/knp-menu-bundle": "~1.1"
+        "rmzamora/knp-menu-bundle": "2.0.x-dev"
     },
     "require-dev": {
         "sonata-project/cache-bundle": "2.1.*",
