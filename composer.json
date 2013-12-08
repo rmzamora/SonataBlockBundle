@@ -29,7 +29,7 @@
     },
     "require-dev": {
         "sonata-project/cache-bundle": "2.1.*",
-        "rmzamora/admin-bundle": "2.3.*@dev"
+        "rmzamora/admin-bundle": "~2.3"
     },
     "suggest": {
         "sonata-project/cache-bundle": "2.1.*"
