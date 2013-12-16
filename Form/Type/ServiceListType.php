@@ -13,6 +13,7 @@ namespace Sonata\BlockBundle\Form\Type;
 
 use Symfony\Component\Form\Exception\InvalidArgumentException;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\HttpKernel\Kernel;
 use Symfony\Component\OptionsResolver\Options;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 
@@ -25,8 +26,8 @@ class ServiceListType extends AbstractType
     protected $contexts;
 
     /**
-     * @param \Sonata\BlockBundle\Block\BlockServiceManagerInterface $manager
-     * @param array                                                  $contexts
+     * @param BlockServiceManagerInterface $manager
+     * @param array                        $contexts
      */
     public function __construct(BlockServiceManagerInterface $manager, array $contexts = array())
     {
@@ -63,12 +64,12 @@ class ServiceListType extends AbstractType
             'multiple'          => false,
             'expanded'          => false,
             'choices'           => function (Options $options, $previousValue) use ($contexts, $manager) {
-                if (!isset($options['context'])) {
-                    throw new InvalidArgumentException('Please define a context option');
-                }
-
                 if (!isset($contexts[$options['context']])) {
-                    throw new InvalidArgumentException('Invalid context');
+                    if (Kernel::MINOR_VERSION < 3) {
+                        throw new \RuntimeException(sprintf('Invalid context: `%s`', $options['context']));
+                    }
+
+                    throw new InvalidArgumentException(sprintf('Invalid context: `%s`', $options['context']));
                 }
 
                 $types = array();
