@@ -22,8 +22,8 @@
         }
     ],
     "require": {
-        "symfony/http-kernel": "~2.2",
-        "symfony/form": "~2.2",
+        "symfony/http-kernel": "~2.4",
+        "symfony/form": "~2.4",
         "doctrine/common": "~2.3",
         "rmzamora/knp-menu-bundle": "2.0.x-dev",
          "sonata-project/core-bundle": "~2.2"
