@@ -26,7 +26,7 @@
         "symfony/form": "~2.4",
         "doctrine/common": "~2.3",        
          "sonata-project/core-bundle": "~2.2",
-         "rmzamora/cache": "~1.0@dev",
+         "rmzamora/cache": "~1.0@dev"
     },
     "require-dev": {
     	"rmzamora/knp-menu-bundle": "2.0.x-dev",
