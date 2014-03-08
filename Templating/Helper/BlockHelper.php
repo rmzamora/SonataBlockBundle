@@ -98,8 +98,8 @@ class BlockHelper extends Helper
     }
 
     /**
-     * @param string $media
-     * @param string $basePath
+     * @param string $media    Unused, only kept to not break existing code
+     * @param string $basePath Base path to prepend to the stylesheet urls.
      *
      * @return array|string
      */
@@ -107,15 +107,15 @@ class BlockHelper extends Helper
     {
         $html = "";
         foreach ($this->assets['js'] as $javascript) {
-            $html .= "\n" . sprintf('<script src="(%s%s" type="text/javascript"></script>', $basePath, $javascript);
+            $html .= "\n" . sprintf('<script src="%s%s" type="text/javascript"></script>', $basePath, $javascript);
         }
 
         return $html;
     }
 
     /**
-     * @param string $media
-     * @param string $basePath
+     * @param string $media    The css media type to use: all|screen|...
+     * @param string $basePath Base path to prepend to the stylesheet urls.
      *
      * @return array|string
      */
