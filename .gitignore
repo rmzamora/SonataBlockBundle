@@ -1,2 +1,4 @@
 Resources/doc/_build
+composer.lock
+vendor
 /.idea/
