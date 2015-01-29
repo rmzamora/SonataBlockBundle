@@ -25,8 +25,8 @@
         "symfony/http-kernel": "~2.4",
         "symfony/form": "~2.4",
         "doctrine/common": "~2.3",        
-         "rmzamora/core-bundle": "~2.4",
-         "rmzamora/cache": "~1.0@dev"
+        "rmzamora/core-bundle": "~2.4",
+        "rmzamora/cache": "~1.0@dev"
     },
     "require-dev": {
     	"rmzamora/knp-menu-bundle": "2.0.x-dev",
