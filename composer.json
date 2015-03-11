@@ -35,7 +35,7 @@
     "suggest": {
         "rmzamora/knp-menu-bundle": "2.0.x-dev",
         "rmzamora/cache-bundle": "~2.2",
-        "rmzamora/admin-bundle": "~2.3"
+        "rmzamora/admin-bundle": "2.5.*"
     },
     "autoload": {
         "psr-4": { "Sonata\\BlockBundle\\": "" }
