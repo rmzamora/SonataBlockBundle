@@ -25,8 +25,8 @@
         "symfony/http-kernel": "~2.4",
         "symfony/form": "~2.4",
         "doctrine/common": "~2.3",        
-         "sonata-project/core-bundle": "~2.2",
-         "rmzamora/cache": "~1.0@dev"
+        "sonata-project/core-bundle": "~2.2",
+        "rmzamora/cache": "~1.0@dev"
     },
     "require-dev": {
     	"rmzamora/knp-menu-bundle": "2.0.x-dev",
@@ -35,7 +35,7 @@
     "suggest": {
         "rmzamora/knp-menu-bundle": "2.0.x-dev",
         "rmzamora/cache-bundle": "~2.2",
-        "rmzamora/admin-bundle": "~2.3"
+        "rmzamora/admin-bundle": "2.3.*"
     },
     "autoload": {
         "psr-4": { "Sonata\\BlockBundle\\": "" }
