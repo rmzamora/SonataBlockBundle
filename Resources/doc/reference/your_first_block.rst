@@ -29,7 +29,7 @@ The current RSS block will extend this base class. The other `use` statements ar
     use Sonata\BlockBundle\Block\BlockContextInterface;
 
     use Sonata\AdminBundle\Form\FormMapper;
-    use Sonata\AdminBundle\Validator\ErrorElement;
+    use Sonata\CoreBundle\Validator\ErrorElement;
     use Sonata\BlockBundle\Block\BaseBlockService;
 
 Default settings
