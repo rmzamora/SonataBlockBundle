@@ -43,7 +43,7 @@ interface BlockAdminServiceInterface
 
     /**
      * @param null $code
-     * 
+     *
      * @return MetadataInterface
      */
     public function getBlockMetadata($code = null);
