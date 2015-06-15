@@ -2,3 +2,4 @@ Resources/doc/_build
 composer.lock
 vendor
 /.idea/
+.php_cs.cache

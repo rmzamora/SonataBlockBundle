@@ -18,7 +18,7 @@ class BlockContextManagerTest extends \PHPUnit_Framework_TestCase
 {
     public function testGetWithValidData()
     {
-        $service = $this->getMock('Sonata\BlockBundle\Block\BlockServiceInterface');
+        $service = $this->getMock('Sonata\BlockBundle\Block\AbstractBlockService');
         $service->expects($this->once())->method('setDefaultSettings');
 
         $blockLoader = $this->getMock('Sonata\BlockBundle\Block\BlockLoaderInterface');
@@ -36,17 +36,17 @@ class BlockContextManagerTest extends \PHPUnit_Framework_TestCase
         $this->assertInstanceOf('Sonata\BlockBundle\Block\BlockContextInterface', $blockContext);
 
         $this->assertEquals(array(
-            'use_cache' => true,
+            'use_cache'        => true,
             'extra_cache_keys' => array(),
-            'attr' => array(),
-            'template' => false,
-            'ttl' => 0
+            'attr'             => array(),
+            'template'         => false,
+            'ttl'              => 0,
         ), $blockContext->getSettings());
     }
 
     public function testGetWithSettings()
     {
-        $service = $this->getMock('Sonata\BlockBundle\Block\BlockServiceInterface');
+        $service = $this->getMock('Sonata\BlockBundle\Block\AbstractBlockService');
         $service->expects($this->once())->method('setDefaultSettings');
 
         $blockLoader = $this->getMock('Sonata\BlockBundle\Block\BlockLoaderInterface');
@@ -58,7 +58,7 @@ class BlockContextManagerTest extends \PHPUnit_Framework_TestCase
         $block->expects($this->once())->method('getSettings')->will($this->returnValue(array()));
 
         $blocksCache = array(
-            'by_class' => array(ClassUtils::getClass($block) => 'my_cache.service.id')
+            'by_class' => array(ClassUtils::getClass($block) => 'my_cache.service.id'),
         );
 
         $manager = new BlockContextManager($blockLoader, $serviceManager, $blocksCache);
@@ -70,15 +70,15 @@ class BlockContextManagerTest extends \PHPUnit_Framework_TestCase
         $this->assertInstanceOf('Sonata\BlockBundle\Block\BlockContextInterface', $blockContext);
 
         $this->assertEquals(array(
-            'use_cache' => true,
+            'use_cache'        => true,
             'extra_cache_keys' => array(
                 BlockContextManager::CACHE_KEY => array(
                     'template' => 'custom.html.twig',
                 ),
             ),
-            'attr' => array(),
+            'attr'     => array(),
             'template' => 'custom.html.twig',
-            'ttl' => 1
+            'ttl'      => 1,
         ), $blockContext->getSettings());
     }
 
@@ -87,7 +87,7 @@ class BlockContextManagerTest extends \PHPUnit_Framework_TestCase
         $logger = $this->getMock('Psr\Log\LoggerInterface');
         $logger->expects($this->exactly(1))->method('error');
 
-        $service = $this->getMock('Sonata\BlockBundle\Block\BlockServiceInterface');
+        $service = $this->getMock('Sonata\BlockBundle\Block\AbstractBlockService');
         $service->expects($this->exactly(2))->method('setDefaultSettings');
 
         $blockLoader = $this->getMock('Sonata\BlockBundle\Block\BlockLoaderInterface');
@@ -97,7 +97,7 @@ class BlockContextManagerTest extends \PHPUnit_Framework_TestCase
 
         $block = $this->getMock('Sonata\BlockBundle\Model\BlockInterface');
         $block->expects($this->once())->method('getSettings')->will($this->returnValue(array(
-            'template' => array()
+            'template' => array(),
         )));
 
         $manager = new BlockContextManager($blockLoader, $serviceManager, array(), $logger);

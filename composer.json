@@ -30,7 +30,8 @@
     },
     "require-dev": {
     	"rmzamora/knp-menu-bundle": "2.0.x-dev",
-        "rmzamora/cache-bundle": "~2.2"
+        "rmzamora/cache-bundle": "~2.2",
+        "fabpot/php-cs-fixer": "~0.5|~1.0"
     },
     "suggest": {
         "rmzamora/knp-menu-bundle": "2.0.x-dev",

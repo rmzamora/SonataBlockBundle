@@ -11,21 +11,20 @@
 
 namespace Sonata\BlockBundle\Block;
 
-use Sonata\CoreBundle\Validator\ErrorElement;
-use Symfony\Component\HttpFoundation\Response;
-use Symfony\Bundle\FrameworkBundle\Templating\EngineInterface;
-use Sonata\BlockBundle\Model\BlockInterface;
 use Sonata\AdminBundle\Form\FormMapper;
+use Sonata\BlockBundle\Model\BlockInterface;
 use Sonata\CoreBundle\Model\Metadata;
-use Symfony\Component\OptionsResolver\OptionsResolverInterface;
+use Sonata\CoreBundle\Validator\ErrorElement;
+use Symfony\Bundle\FrameworkBundle\Templating\EngineInterface;
+use Symfony\Component\HttpFoundation\Response;
 
 /**
- * BaseBlockService
+ * BaseBlockService.
  *
  *
  * @author     Thomas Rabaix <thomas.rabaix@sonata-project.org>
  */
-abstract class BaseBlockService implements BlockServiceInterface, BlockAdminServiceInterface
+abstract class BaseBlockService extends AbstractBlockService implements BlockAdminServiceInterface
 {
     protected $name;
 
@@ -42,7 +41,7 @@ abstract class BaseBlockService implements BlockServiceInterface, BlockAdminServ
     }
 
     /**
-     * Returns a Response object than can be cacheable
+     * Returns a Response object than can be cacheable.
      *
      * @param string   $view
      * @param array    $parameters
@@ -81,7 +80,7 @@ abstract class BaseBlockService implements BlockServiceInterface, BlockAdminServ
         return $this->name;
     }
 
-     /**
+    /**
      * {@inheritdoc}
      */
     public function getTemplating()
@@ -176,14 +175,6 @@ abstract class BaseBlockService implements BlockServiceInterface, BlockAdminServ
     /**
      * {@inheritdoc}
      */
-    public function setDefaultSettings(OptionsResolverInterface $resolver)
-    {
-
-    }
-
-    /**
-     * {@inheritdoc}
-     */
     public function execute(BlockContextInterface $blockContext, Response $response = null)
     {
         return $this->renderResponse($blockContext->getTemplate(), array(
@@ -195,23 +186,17 @@ abstract class BaseBlockService implements BlockServiceInterface, BlockAdminServ
     /**
      * @param FormMapper     $form
      * @param BlockInterface $block
-     *
-     * @return void
      */
     public function buildEditForm(FormMapper $form, BlockInterface $block)
     {
-
     }
 
     /**
      * @param ErrorElement   $errorElement
      * @param BlockInterface $block
-     *
-     * @return void
      */
     public function validateBlock(ErrorElement $errorElement, BlockInterface $block)
     {
-
     }
 
     /**
@@ -219,6 +204,6 @@ abstract class BaseBlockService implements BlockServiceInterface, BlockAdminServ
      */
     public function getBlockMetadata($code = null)
     {
-        return new Metadata($this->getName(), (!is_null($code) ? $code : $this->getName()), false, "SonataBlockBundle", array('class' => 'fa fa-file'));
+        return new Metadata($this->getName(), (!is_null($code) ? $code : $this->getName()), false, 'SonataBlockBundle', array('class' => 'fa fa-file'));
     }
 }

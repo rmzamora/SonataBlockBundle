@@ -11,14 +11,12 @@
 
 namespace Sonata\BlockBundle\Block\Service;
 
-use Sonata\BlockBundle\Block\BlockContextInterface;
-use Symfony\Component\HttpFoundation\Response;
-
 use Sonata\AdminBundle\Form\FormMapper;
-
-use Sonata\BlockBundle\Model\BlockInterface;
 use Sonata\BlockBundle\Block\BaseBlockService;
-use Symfony\Component\OptionsResolver\OptionsResolverInterface;
+use Sonata\BlockBundle\Block\BlockContextInterface;
+use Sonata\BlockBundle\Model\BlockInterface;
+use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\OptionsResolver\OptionsResolver;
 
 /**
  * @author     Thomas Rabaix <thomas.rabaix@sonata-project.org>
@@ -32,7 +30,7 @@ class TemplateBlockService extends BaseBlockService
     {
         return $this->renderResponse($blockContext->getTemplate(), array(
             'block'     => $blockContext->getBlock(),
-            'settings'  => $blockContext->getSettings()
+            'settings'  => $blockContext->getSettings(),
         ), $response);
     }
 
@@ -44,7 +42,7 @@ class TemplateBlockService extends BaseBlockService
         $formMapper->add('settings', 'sonata_type_immutable_array', array(
             'keys' => array(
                 array('template', null, array()),
-            )
+            ),
         ));
     }
 
@@ -59,10 +57,10 @@ class TemplateBlockService extends BaseBlockService
     /**
      * {@inheritdoc}
      */
-    public function setDefaultSettings(OptionsResolverInterface $resolver)
+    public function configureSettings(OptionsResolver $resolver)
     {
         $resolver->setDefaults(array(
-            'template' => 'SonataBlockBundle:Block:block_template.html.twig'
+            'template' => 'SonataBlockBundle:Block:block_template.html.twig',
         ));
     }
 }
