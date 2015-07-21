@@ -18,16 +18,22 @@ use Sonata\CoreBundle\Validator\ErrorElement;
 interface BlockAdminServiceInterface
 {
     /**
-     * @param FormMapper     $form
+     * @param FormMapper $formMapper
      * @param BlockInterface $block
+     *
+     * @return
+     * @internal param FormMapper $form
      */
-    public function buildEditForm(FormMapper $form, BlockInterface $block);
+    public function buildEditForm(FormMapper $formMapper, BlockInterface $block);
 
     /**
-     * @param FormMapper     $form
+     * @param FormMapper $formMapper
      * @param BlockInterface $block
+     *
+     * @return
+     * @internal param FormMapper $form
      */
-    public function buildCreateForm(FormMapper $form, BlockInterface $block);
+    public function buildCreateForm(FormMapper $formMapper, BlockInterface $block);
 
     /**
      * @param ErrorElement   $errorElement
