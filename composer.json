@@ -36,14 +36,14 @@
     "suggest": {
         "rmzamora/knp-menu-bundle": "2.0.x-dev",
         "rmzamora/cache-bundle": "~2.2",
-        "rmzamora/admin-bundle": "2.4.*"
+        "rmzamora/admin-bundle": "2.4.2.*"
     },
     "autoload": {
         "psr-4": { "Sonata\\BlockBundle\\": "" }
     },
     "extra": {
         "branch-alias": {
-            "dev-2.4": "2.4.x-dev"
+            "dev-2.4.2": "2.4.2.x-dev"
         }
     }
 }
