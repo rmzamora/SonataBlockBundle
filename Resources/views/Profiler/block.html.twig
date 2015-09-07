@@ -1,34 +1,63 @@
 {% extends 'WebProfilerBundle:Profiler:layout.html.twig' %}
 
 {% block toolbar %}
-    <div class="sf-toolbar-block">
-        <div class="sf-toolbar-icon">
-            <a href="{{ path('_profiler', { 'token': token, 'panel': name }) }}">
-                {# fake image span #}<span style="width:0px; height: 28px; vertical-align: middle;"></span>
-                <span class="sf-toolbar-status">{{ collector.getTotalBlock() }}</span> blocks
-                {% if collector.events|length > 0 %}<strong>*</strong>{% endif %}
-            </a>
-        </div>
-        <div class="sf-toolbar-info">
-            <div class="sf-toolbar-info-piece">
-                <b>Real Blocks</b>
-                <span>{{ collector.realBlocks|length }}</span>
-            </div>
-            <div class="sf-toolbar-info-piece">
-                <b>Containers</b>
-                <span>{{ collector.containers|length }}</span>
-            </div>
-            <div class="sf-toolbar-info-piece">
-                <b>Total Blocks</b>
-                <span>{{ collector.getTotalBlock() }}</span>
-            </div>
-            <div class="sf-toolbar-info-piece">
-                <hr />
-                <b>Events</b>
-                <span>{{ collector.events|length }}</span>
-            </div>
-        </div>
-    </div>
+
+    {% set icon %}
+	    {{ include('@WebProfiler/Icon/twig.svg') }}
+	    {% set status_color = collector.getTotalBlock() > 0 ? 'red' : 'yellow' %}
+	    <span class="sf-toolbar-value">{{ collector.getTotalBlock() }}</span>
+	    <span class="sf-toolbar-label">Blocks</span>
+    {% endset %}
+
+	{% set text %}
+		<div class="sf-toolbar-info-piece">
+			<b>Real Blocks</b>
+			<span>{{ collector.realBlocks|length }}</span>
+		</div>
+		<div class="sf-toolbar-info-piece">
+			<b>Containers</b>
+			<span>{{ collector.containers|length }}</span>
+		</div>
+		<div class="sf-toolbar-info-piece">
+			<b>Total Blocks</b>
+			<span>{{ collector.getTotalBlock() }}</span>
+		</div>
+		<div class="sf-toolbar-info-piece">
+			<b>Events</b>
+			<span>{{ collector.events|length }}</span>
+		</div>
+	{% endset %}
+
+	{{ include('@WebProfiler/Profiler/toolbar_item.html.twig', { link: profiler_url, status: status_color }) }}
+
+    {#<div class="sf-toolbar-block">#}
+        {#<div class="sf-toolbar-icon">#}
+            {#<a href="{{ path('_profiler', { 'token': token, 'panel': name }) }}">#}
+                {#&#123;&#35; fake image span &#35;&#125;<span style="width:0px; height: 28px; vertical-align: middle;"></span>#}
+                {#<span class="sf-toolbar-status">{{ collector.getTotalBlock() }}</span> blocks#}
+                {#{% if collector.events|length > 0 %}<strong>*</strong>{% endif %}#}
+            {#</a>#}
+        {#</div>#}
+        {#<div class="sf-toolbar-info">#}
+            {#<div class="sf-toolbar-info-piece">#}
+                {#<b>Real Blocks</b>#}
+                {#<span>{{ collector.realBlocks|length }}</span>#}
+            {#</div>#}
+            {#<div class="sf-toolbar-info-piece">#}
+                {#<b>Containers</b>#}
+                {#<span>{{ collector.containers|length }}</span>#}
+            {#</div>#}
+            {#<div class="sf-toolbar-info-piece">#}
+                {#<b>Total Blocks</b>#}
+                {#<span>{{ collector.getTotalBlock() }}</span>#}
+            {#</div>#}
+            {#<div class="sf-toolbar-info-piece">#}
+                {#<hr />#}
+                {#<b>Events</b>#}
+                {#<span>{{ collector.events|length }}</span>#}
+            {#</div>#}
+        {#</div>#}
+    {#</div>#}
 {% endblock %}
 
 {% block menu %}
