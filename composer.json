@@ -22,24 +22,25 @@
         }
     ],
     "require": {
-        "symfony/http-kernel": "~2.4",
-        "symfony/form": "~2.4",
-        "doctrine/common": "~2.3",        
+        "symfony/http-kernel": "~2.3|~3.0",
+        "symfony/form": "~2.3|~3.0",
+        "doctrine/common": "~2.3",
         "rmzamora/core-bundle": "2.5.0.*",
         "rmzamora/cache": "2.5.0.*"
     },
     "require-dev": {
-        "rmzamora/cache-bundle": "2.5.0.*",
-        "knplabs/knp-menu-bundle": "~2.0",
-        "fabpot/php-cs-fixer": "~0.5|~1.0"
+    	"knplabs/knp-menu-bundle": "~2.0|~2.1@dev",
+        "rmzamora/admin-bundle": "2.5.0.*",
+        "symfony/phpunit-bridge": "~2.7|~3.0",
+        "fabpot/php-cs-fixer": "~0.5|~1.11@dev"
     },
     "suggest": {
         "knplabs/knp-menu-bundle": "~2.0",
-        "rmzamora/cache-bundle": "2.5.0.*",
-        "rmzamora/admin-bundle": "2.5.0.*"
+        "rmzamora/cache-bundle": "2.5.0.*"
     },
     "autoload": {
-        "psr-4": { "Sonata\\BlockBundle\\": "" }
+        "psr-4": { "Sonata\\BlockBundle\\": "" },
+        "files": ["Resources/stubs/symfony2.php"]
     },
     "extra": {
         "branch-alias": {
