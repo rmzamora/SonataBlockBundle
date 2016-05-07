@@ -22,20 +22,19 @@
         }
     ],
     "require": {
-        "symfony/http-kernel": "~2.3|~3.0",
-        "symfony/form": "~2.3|~3.0",
-        "doctrine/common": "~2.3",
+        "symfony/http-kernel": "^2.3 || ^3.0",
+        "symfony/form": "^2.3 || ^3.0",
+        "doctrine/common": "^2.3",
         "rmzamora/core-bundle": "2.5.0.*",
         "rmzamora/cache": "2.5.0.*"
     },
     "require-dev": {
     	"knplabs/knp-menu-bundle": "~2.0|~2.1@dev",
         "rmzamora/admin-bundle": "2.5.0.*",
-        "symfony/phpunit-bridge": "~2.7|~3.0",
-        "fabpot/php-cs-fixer": "~0.5|~1.11@dev"
+        "symfony/phpunit-bridge": "~2.7|~3.0"
     },
     "suggest": {
-        "knplabs/knp-menu-bundle": "~2.0",
+        "knplabs/knp-menu-bundle": "^2.0",
         "rmzamora/cache-bundle": "2.5.0.*"
     },
     "autoload": {
