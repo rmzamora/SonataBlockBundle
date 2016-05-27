@@ -25,6 +25,7 @@
         "symfony/http-kernel": "^2.3 || ^3.0",
         "symfony/form": "^2.3 || ^3.0",
         "doctrine/common": "^2.3",
+<<<<<<< HEAD
         "rmzamora/core-bundle": "2.5.0.*",
         "rmzamora/cache": "2.5.0.*"
     },
@@ -36,6 +37,20 @@
     "suggest": {
         "knplabs/knp-menu-bundle": "^2.0",
         "rmzamora/cache-bundle": "2.5.0.*"
+=======
+        "sonata-project/core-bundle": "^2.3,>=2.3.10",
+        "sonata-project/cache": "^1.0"
+    },
+    "require-dev": {
+        "knplabs/knp-menu-bundle": "^2.0",
+        "sonata-project/admin-bundle": "^2.3",
+        "symfony/phpunit-bridge": "^2.7 || ^3.0",
+        "sllh/php-cs-fixer-styleci-bridge": "^2.0"
+    },
+    "suggest": {
+        "knplabs/knp-menu-bundle": "^2.0",
+        "sonata-project/cache-bundle": "^2.1"
+>>>>>>> sonata-project/2.x
     },
     "autoload": {
         "psr-4": { "Sonata\\BlockBundle\\": "" },
@@ -43,7 +58,11 @@
     },
     "extra": {
         "branch-alias": {
+<<<<<<< HEAD
             "dev-2.5.0": "2.5.0.x-dev"
+=======
+            "dev-master": "2.x-dev"
+>>>>>>> sonata-project/2.x
         }
     }
 }
