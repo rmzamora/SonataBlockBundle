@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the Sonata Project package.
+ * This file is part of the Sonata project.
  *
  * (c) Thomas Rabaix <thomas.rabaix@sonata-project.org>
  *
@@ -86,7 +86,6 @@ class RssBlockService extends BaseBlockService
 
             // retrieve contents with a specific stream context to avoid php errors
             $content = @file_get_contents($settings['url'], false, stream_context_create($options));
-
             if ($content) {
                 // generate a simple xml element
                 try {
