@@ -1,9 +1,9 @@
 <?php
 
 /*
- * This file is part of the Sonata Project package.
+ * This file is part of sonata-project.
  *
- * (c) Thomas Rabaix <thomas.rabaix@sonata-project.org>
+ * (c) 2010 Thomas Rabaix
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
